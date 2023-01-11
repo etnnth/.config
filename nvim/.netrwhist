@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/home/etienne/granite/src/Index'
+let g:netrw_dirhist_8='/home/etienne/codeforces/1522A'
+let g:netrw_dirhist_7='/home/etienne/codeforces/1527B1'
+let g:netrw_dirhist_6='/home/etienne/googleCode/codejam2021/qualification/cheater'
+let g:netrw_dirhist_5='/home/etienne/elm-webgl/src/Index'
+let g:netrw_dirhist_4='/home/etienne/these/manuscript/chap1'
+let g:netrw_dirhist_3='/home/etienne/thermomagnon'
+let g:netrw_dirhist_2='/home/etienne/thermomagnon/.git/hooks'
+let g:netrw_dirhist_1='/home/etienne/Documents/resume/researchplan'
