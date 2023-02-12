@@ -1,3 +1,11 @@
+-- https://github.com/hrsh7th/cmp-nvim-lsp
+-- https://github.com/hrsh7th/cmp-nvim-lsp-signature-help
+-- https://github.com/hrsh7th/nvim-cmp
+-- https://github.com/neovim/nvim-lspconfig
+-- https://github.com/nvim-treesitter/nvim-treesitter
+-- https://github.com/nvim-lua/plenary.nvim
+-- https://github.com/nvim-telescope/telescope.nvim
+
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', 'ff', builtin.find_files, {})
 vim.keymap.set('n', 'fg', builtin.live_grep, {})
