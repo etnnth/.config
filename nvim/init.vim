@@ -57,4 +57,19 @@ autocmd Filetype html setlocal shiftwidth=2
 autocmd Filetype elm setlocal shiftwidth=2
 autocmd Filetype c setlocal shiftwidth=2
 
+set statusline+=%{FugitiveStatusline()}
+
+set statusline+=%f 
+set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+set statusline+=%{&ff}] "file format
+set statusline+=%h      "help file flag
+set statusline+=%m      "modified flag
+set statusline+=%r      "read only flag
+set statusline+=%y      "filetype
+set statusline+=%=      "left/right separator
+set statusline+=%c,     "cursor column
+set statusline+=%l/%L   "cursor line/total lines
+set statusline+=\ %P    "percent through file
+
 lua require('config')
+
