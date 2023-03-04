@@ -33,10 +33,6 @@ autocmd BufReadPost,FileReadPost * normal zR
 " Keep cursor on the word when using *
 nnoremap * *N
 
-" move between buffers with tab
-:nnoremap <Tab> :bn<cr>
-:nnoremap <S-Tab> :bp<cr>
-
 " move between window simplified
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>

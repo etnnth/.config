@@ -1,10 +1,14 @@
+-- ~/.local/share/nvim/site/pack/plugins/start
 -- https://github.com/hrsh7th/cmp-nvim-lsp
 -- https://github.com/hrsh7th/cmp-nvim-lsp-signature-help
 -- https://github.com/hrsh7th/nvim-cmp
+-- https://github.com/hrsh7th/cmp-path
+-- https://github.com/hrsh7th/cmp-buffer
 -- https://github.com/neovim/nvim-lspconfig
 -- https://github.com/nvim-treesitter/nvim-treesitter
 -- https://github.com/nvim-lua/plenary.nvim
 -- https://github.com/nvim-telescope/telescope.nvim
+-- https://github.com/nvim-telescope/telescope-file-browser.nvim
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', 'ff', builtin.find_files, {})
@@ -12,7 +16,7 @@ vim.keymap.set('n', 'fg', builtin.live_grep, {})
 vim.keymap.set('n', 'fb', builtin.buffers, {})
 vim.keymap.set('n', 'fh', builtin.help_tags, {})
 vim.keymap.set('n', 'ft', builtin.treesitter, {})
-
+vim.api.nvim_set_keymap("n", "<space>fb",  ":Telescope file_browser",  { noremap = true })
 
 
 require('telescope').setup{
@@ -45,6 +49,7 @@ require('telescope').setup{
     -- please take a look at the readme of the extension you want to configure
   }
 }
+require("telescope").load_extension "file_browser"
 
 
 local lspconfig = require('lspconfig')
@@ -95,6 +100,8 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'nvim_lsp_signature_help' },
+    { name = 'buffer' },
+    { name = 'path' },
   },
 }
 
