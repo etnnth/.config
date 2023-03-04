@@ -9,6 +9,7 @@
 -- https://github.com/nvim-lua/plenary.nvim
 -- https://github.com/nvim-telescope/telescope.nvim
 -- https://github.com/nvim-telescope/telescope-file-browser.nvim
+-- https://github.com/tpope/vim-fugitive
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', 'ff', builtin.find_files, {})
