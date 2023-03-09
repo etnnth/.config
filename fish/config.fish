@@ -5,4 +5,4 @@ export COMPOSE_DOCKER_CLI_BUILD=1
 export DOCKER_BUILDKIT=1
 
 theme_gruvbox dark hard
-fish_vi_key_bindings
+fish_default_key_bindings
