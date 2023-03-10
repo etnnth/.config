@@ -79,23 +79,22 @@ require("lspconfig").rust_analyzer.setup(config({
         cmd = { "rustup", "run", "stable", "rust-analyzer" },
     }))
 
-
-
 -- nvim-cmp setup
 local cmp = require 'cmp'
-cmp.setup {
-  mapping = cmp.mapping.preset.insert({
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
-  }),
-   window = {
-    completion = { -- rounded border; thin-style scrollbar
-      -- border = 'rounded',
+cmp.setup({
+    mapping = cmp.mapping.preset.insert({
+        ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-e>'] = cmp.mapping.abort(),
+        ['<CR>'] = cmp.mapping.confirm({ select = false }),
+    }),
+    window = {
+        completion = { -- rounded border; thin-style scrollbar
+        -- border = 'rounded',
     },
     documentation = { -- no border; native-style scrollbar
-      -- border = 'rounded',
+        -- border = 'rounded',
     },
   },
   sources = {
@@ -104,7 +103,7 @@ cmp.setup {
     { name = 'buffer' },
     { name = 'path' },
   },
-}
+})
 
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
   vim.lsp.handlers.hover,
