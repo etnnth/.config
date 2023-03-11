@@ -27,6 +27,9 @@ set relativenumber
 set rnu
 autocmd BufReadPost,FileReadPost * normal zR
 
+" remap leader key
+let mapleader=","
+
 " using escape to go to normal mode in terminal mode
 :tnoremap <Esc> <C-\><C-n>  
 
