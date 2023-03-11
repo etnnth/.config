@@ -59,6 +59,8 @@ local function config(_config)
 	return vim.tbl_deep_extend("force", {
 		capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities()),
 		on_attach = function()
+            
+            local opts = {buffer = bufnr, remap = false}
 			vim.keymap.set('n',"gd", function() vim.lsp.buf.definition() end)
 			vim.keymap.set('n',"gr", function() vim.lsp.buf.references() end)
 			vim.keymap.set('n',"gD", function() vim.lsp.buf.declaration() end)
@@ -67,6 +69,11 @@ local function config(_config)
 			vim.keymap.set('n',"[d", function() vim.diagnostic.goto_next() end)
 			vim.keymap.set('n',"]d", function() vim.diagnostic.goto_prev() end)
 			vim.keymap.set('i',"<C-h>", function() vim.lsp.buf.signature_help() end)
+            
+            vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
+            vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+            
+            vim.keymap.set("n", "<leader>cr", function() vim.lsp.buf.rename() end, opts)
 		end,
 	}, _config or {})
 end
@@ -90,7 +97,7 @@ cmp.setup({
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.abort(),
-        ['<CR>'] = cmp.mapping.confirm({ select = false }),
+        ['<C-y>'] = cmp.mapping.confirm({ select = true }),
     }),
     window = {
         completion = { -- rounded border; thin-style scrollbar
